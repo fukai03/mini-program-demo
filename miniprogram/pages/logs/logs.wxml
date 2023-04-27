@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log.date}}</text>
+  </block>
+  <button bindtap="clearLogs">清除log</button>
+  <view>
+    <map longitude="104.08329" latitude="30.65618"></map>
+    
+  </view>
+</view>
