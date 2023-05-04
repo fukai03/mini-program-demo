@@ -1,0 +1,5 @@
+
+<view>
+  <input model:value="{{value}}" />
+</view>
+<button bindtap="viewValue">click</button>

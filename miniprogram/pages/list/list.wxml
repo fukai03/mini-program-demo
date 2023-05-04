@@ -1,0 +1,40 @@
+<!--logs.wxml-->
+<wxs module="m1">
+var msg = "hello world";
+
+module.exports.message = msg;
+
+var getMax = function(array) {
+  var max = undefined;
+  for (var i = 0; i < array.length; ++i) {
+    max = max === undefined ?
+      array[i] :
+      (max >= array[i] ? max : array[i]);
+  }
+  return max;
+}
+
+module.exports.getMax = getMax;
+</wxs>
+
+<view> {{m1.message}} </view>
+<view> {{m1.getMax(array)}} </view>
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log.date}}</text>
+    <text class="log-item" wx:if="{{index % 2 === 0}}">odd-{{log.timeStamp}}</text>
+    <text class="log-item" wx:else>even-{{log.timeStamp}}</text>
+  </block>
+  <view>
+  </view>
+</view>
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+

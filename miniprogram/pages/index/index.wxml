@@ -29,4 +29,8 @@
     <button bindtap="bindGetLocation">getLocation</button>
     <button bindtap="bindScanCode">扫一扫</button>
   </view>
+  <view class="usermotto">
+    <button bindtap="bindToList">跳转到List</button>
+    <button bindtap="bindToData">跳转到Data</button>
+  </view>
 </view>
